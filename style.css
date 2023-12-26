@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+:root {
+  --Dark-Purple: #301534;
+  --Pale-Purple: #8b6990;
+  --Pink-Hover: #ad28eb;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+:is(
+    .accordian-container,
+    .question-main,
+    .accordian-title-container,
+    .q-container,
+    .q-1-container
+  ) {
+  display: flex;
+}
+
+.accordian-container {
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
+  gap: 2rem;
+  padding: 2.5rem;
+  max-width: 37.5rem;
+  width: calc(100vw - 1.5rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  height: fit-content;
+}
+.question-main {
+  flex-direction: column;
+  gap: 2rem;
+}
+.accordian-title-start-img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.accordian-title-container {
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.accordian-title-name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--Dark-Purple);
+}
+.question:hover {
+  color: var(--Pink-Hover);
+}
+.q-container {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.q-1-container {
+  justify-content: space-between;
+  align-items: center;
+}
+.question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--Dark-Purple);
+  cursor: pointer;
+}
+.plus-minus-button {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+
+.answer {
+  max-height: 0;
+  transition: max-height 365ms ease-out;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--Pale-Purple);
+}
+.answer.answer-show {
+  max-height: 250px;
+  transition: all 400ms ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .accordian-container {
+    top: 50%;
+  }
+}
+
+@media (max-width: 540px) {
+  .accordian-container {
+    top: 42%;
+  }
+  .accordian-title-name {
+    font-size: 2rem;
+  }
+  .answer {
+    font-size: 0.875rem;
+  }
+  .q-1-container {
+    gap: 1.5rem;
+  }
+  .question {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 376px) {
+  .accordian-container {
+    top: 50%;
+  }
+}
